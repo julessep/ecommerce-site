@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "first_name": "Red",
+      "last_name": "Red",
+      "username": "redred",
+      "email": "red@gmail.com",
+      "password": "dogs"
+    },
+    {
+      "first_name": "Orange",
+      "last_name": "Orange",
+      "username": "orangeorange",
+      "email": "orange@gmail.com",
+      "password": "dogs"   
+    },
+    {
+      "first_name": "Yellow",
+      "last_name": "Yellow",
+      "username": "yellowyellow",
+      "email": "yellow@gmail.com",
+      "password": "dogs"  
+    }
+  ]
+}
