@@ -3,6 +3,7 @@ extends index.pug
 block content
   h1 Categories!
     ul
-      each product in categories
-        -let url = `http://localhost:8080/categories/` + product.id
-        a(href=url) #{product.category}
+      each category in categories
+        -let url = `http://localhost:5000/categories/` + category.id
+        a(href=url) #{category.name}
+        br
