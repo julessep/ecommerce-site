@@ -2,7 +2,7 @@ extends index.pug
 
 block content
   h1 Best Sellers!
-  .product#coms
     ul
       each product in products
-        li #{product.title}
+        -let url = `http://localhost:8080/products/` + product.id
+        a(href=url) #{product.category}
