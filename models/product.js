@@ -4,10 +4,14 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     quantity: DataTypes.STRING,
     price: DataTypes.STRING,
-    category: DataTypes.STRING
+    category: DataTypes.STRING,
   }, {timestamps: false});
 
-  Product.associate= (models) => {
+  Product.associate = function(models) {
+    Product.belongsTo(models.Category, {
+      foreignKey: 'categoryId',
+      onDelete: 'CASCADE'
+    });
   };
 
   return Product;

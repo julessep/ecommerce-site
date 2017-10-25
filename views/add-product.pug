@@ -1,0 +1,20 @@
+extends index.pug
+
+block content
+  form(action="/postProduct", method="POST")
+    label(for="title") Title:
+    input(type="string", name="title")
+    br
+    label(for="quantity") Quantity:
+    input(type="string", name="quantity")
+    br
+    label(for="price") Price:
+    input(type="string", name="price") 
+    br
+    label(for="category") Category:
+      select(class="selectval", name="selectval")
+        each category in categories
+          option(value=category.id) #{category.name}
+      br    
+    br
+    button(type="submit") Sell

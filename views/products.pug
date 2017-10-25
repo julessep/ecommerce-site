@@ -1,8 +1,10 @@
 extends index.pug
 
 block content
-  h1 Best Sellers!
-  .product#coms
+  h1 Products!
     ul
       each product in products
-        li #{product.title}
+        -let url = `http://localhost:5000/products/` + product.id
+        a(href=url) #{product.title} 
+        br
+    a(href="/postProduct") Add product to sell

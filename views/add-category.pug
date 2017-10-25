@@ -1,0 +1,8 @@
+extends index.pug
+
+block content
+  form(action="/postCategory", method="POST")
+    label(for="name") Category Name:
+    input(type="string", name="name")   
+    br
+    button(type="submit") Add Category

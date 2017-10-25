@@ -19,6 +19,9 @@ module.exports = {
       },
       category: {
         type: Sequelize.STRING
+      },
+      categoryId: {
+        type: Sequelize.INTEGER
       }
     });
   },
