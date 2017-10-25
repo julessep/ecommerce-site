@@ -1,0 +1,9 @@
+extends index.pug
+
+block content
+  h3 
+    label(for="title") #{product.title}
+  label(for="price") $#{product.price}.00
+  br
+  label(for="quantity") Quantity: #{product.quantity}   
+  //- a(href=`/cart/${product.id}?_method=PUT`) Add to cart

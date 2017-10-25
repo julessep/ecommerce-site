@@ -11,6 +11,19 @@ module.exports.getProducts = (req, res, next) => {
   });
 };
 
+module.exports.getOneProduct = (req, res, next) => {
+  const { Product, Category } = req.app.get('models'); 
+  Product.findOne({where: {id: req.params.id}, include: [{model: Category}] })
+  .then( (data) => {
+      const {dataValues:product} = data;
+      res.render('product-details', {product});        
+  })
+  .catch( (err) => {
+    console.log('error!')
+    next(err);
+  });
+};
+
 module.exports.addProductForm = (req, res, next) => {
   const { Category } = req.app.get('models');
   Category.findAll()
