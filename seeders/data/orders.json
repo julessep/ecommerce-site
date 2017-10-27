@@ -1,0 +1,28 @@
+{
+  "orders": [
+    {
+      "userId": "1",
+      "order_date": "09/22/12",
+      "createdAt": "09/22/01",
+      "updatedAt": "09/22/02"
+    },
+    {
+      "userId": "2",
+      "order_date": "03/22/12",
+      "createdAt": "09/22/01",
+      "updatedAt": "09/22/02"      
+    },
+    {
+      "userId": "3",
+      "order_date": "04/22/14",
+      "createdAt": "09/22/01",
+      "updatedAt": "09/22/02"
+    },
+    {
+      "userId": "4",
+      "order_date": "10/06/08",
+      "createdAt": "09/22/01",
+      "updatedAt": "09/22/02"      
+    }
+  ]
+}

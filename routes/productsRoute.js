@@ -10,11 +10,16 @@ const {
   getOneProduct
 } = require('../controllers/productCtrl.js');
 
-// need to change to only get top 20 
-router.get('/bestsellers', getProducts);
+
 router.get('/products', getProducts);
 router.get('/products/:id', getOneProduct);
-router.get('/postProduct', addProductForm);
-router.post('/postProduct', postProduct);
+router.get('/postProduct', isLoggedIn, addProductForm);
+router.post('/postProduct', isLoggedIn, postProduct);
 
 module.exports = router;
+
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated())
+      return next();
+  res.redirect('/login');
+}

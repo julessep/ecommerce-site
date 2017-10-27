@@ -1,0 +1,11 @@
+extends index.pug
+
+block content
+  h1 Your Payments!
+  ul
+    each payment in payments
+      -let url = `http://localhost:5000/payments/` + payment.id
+      a(href=url) #{payment.cardNickname} 
+      br
+  form(action="/postPayment")
+    button(type="submit") New Payment

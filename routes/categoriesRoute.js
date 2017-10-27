@@ -10,7 +10,13 @@ const {
 } = require('../controllers/categoryCtrl.js');
 
 router.get('/categories', getCategories);
-router.get('/postCategory', addCategoryForm);
-router.post('/postCategory', postCategory);
+router.get('/postCategory', isLoggedIn, addCategoryForm);
+router.post('/postCategory', isLoggedIn, postCategory);
 
 module.exports = router;
+
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated())
+      return next();
+  res.redirect('/login');
+}
