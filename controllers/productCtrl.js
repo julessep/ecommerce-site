@@ -1,5 +1,7 @@
 'use strict'
 
+const passport = require('passport');
+
 module.exports.getProducts = (req, res, next) => {
   const { Product } = req.app.get('models');
   Product.findAll()
@@ -12,8 +14,11 @@ module.exports.getProducts = (req, res, next) => {
 };
 
 module.exports.getOneProduct = (req, res, next) => {
+  // console.log("getOneProduct ");
+  // console.log(req.session.passport.user.id);
   const { Product, Category } = req.app.get('models'); 
-  Product.findOne({where: {id: req.params.id}, include: [{model: Category}] })
+  // console.log(Category);
+  Product.findOne({where: {id: req.params.id} })
   .then( (data) => {
       const {dataValues:product} = data;
       res.render('product-details', {product});        
@@ -38,13 +43,15 @@ module.exports.addProductForm = (req, res, next) => {
 };
 
 module.exports.postProduct = (req, res, next) => {
-  const { Product } = req.app.get('models');
+  const { Product, Category } = req.app.get('models');
   Product.create({
+    userId: req.session.passport.user.id,
     title: req.body.title,
     quantity: req.body.quantity,
     price: req.body.price,
     category: req.body.category,
-    categoryId: req.body.selectval
+    categoryId: req.body.selectval,
+    date_added: req.body.date
   })
   .then( () => {
     res.redirect('products');

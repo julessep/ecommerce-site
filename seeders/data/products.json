@@ -7,12 +7,6 @@
       "category": "tees"
     },
     {
-      "title": "Boxy Cotton Pullover",
-      "quantity": "9",
-      "price": "44",
-      "category": "tees"   
-    },
-    {
       "title": "Cashmere V Neck",
       "quantity": "18",
       "price": "77",
@@ -55,24 +49,6 @@
       "category": "tees"
     },
     {
-      "title": "Soft Cotton Pullover",
-      "quantity": "13",
-      "price": "33",
-      "category": "tees"   
-    },
-    {
-      "title": "Velvet Sneakers",
-      "quantity": "12",
-      "price": "55",
-      "category": "shoes"
-    },
-    {
-      "title": "Black Block Heels",
-      "quantity": "9",
-      "price": "44",
-      "category": "shoes"   
-    },
-    {
       "title": "Knee High Boots",
       "quantity": "18",
       "price": "77",
@@ -85,12 +61,6 @@
       "category": "shoes"
     },
     {
-      "title": "Woven Platform Sneakers",
-      "quantity": "13",
-      "price": "33",
-      "category": "shoes"   
-    },
-    {
       "title": "Yellow Leather Heels",
       "quantity": "12",
       "price": "55",
@@ -101,60 +71,6 @@
       "quantity": "9",
       "price": "44",
       "category": "shoes"   
-    },
-    {
-      "title": "Pointy Toe Loafers",
-      "quantity": "18",
-      "price": "77",
-      "category": "shoes"  
-    },
-    {
-      "title": "Black Patent Flats",
-      "quantity": "48",
-      "price": "44",
-      "category": "shoes"
-    },
-    {
-      "title": "Red High Tops",
-      "quantity": "13",
-      "price": "33",
-      "category": "shoes"   
-    },
-    {
-      "title": "Light Wash Crops",
-      "quantity": "18",
-      "price": "77",
-      "category": "denim"  
-    },
-    {
-      "title": "Mid Rise Skinny Jeans",
-      "quantity": "12",
-      "price": "55",
-      "category": "denim"
-    },
-    {
-      "title": "Cropped Dark Wash Skinnies",
-      "quantity": "9",
-      "price": "44",
-      "category": "denim"   
-    },
-    {
-      "title": "High Rise Boot Cut Jeans",
-      "quantity": "18",
-      "price": "77",
-      "category": "denim"  
-    },
-    {
-      "title": "Hiphugger Jean Shorts",
-      "quantity": "48",
-      "price": "44",
-      "category": "denim"
-    },
-    {
-      "title": "Destroyed Denim Skinnies",
-      "quantity": "13",
-      "price": "33",
-      "category": "denim"   
     },
     {
       "title": "Dark Wash Crops",
@@ -173,12 +89,6 @@
       "quantity": "12",
       "price": "55",
       "category": "denim"
-    },
-    {
-      "title": "Cropped Dark Wash Skinnies",
-      "quantity": "9",
-      "price": "44",
-      "category": "denim"   
     },
     {
       "title": "High Rise Boot Cut Jeans",

@@ -6,4 +6,5 @@ block content
   label(for="price") $#{product.price}.00
   br
   label(for="quantity") Quantity: #{product.quantity}   
-  //- a(href=`/cart/${product.id}?_method=PUT`) Add to cart
+  form(action=`/cart/${product.id}`, method="POST")
+    button(type="submit") Add to cart

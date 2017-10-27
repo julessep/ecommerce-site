@@ -2,9 +2,10 @@ if session.passport
   span #{session.passport.user.username}
   form(method="POST")
     button(type="submit" formaction="/logout") logout
-  a(href="http://localhost:5000/postProduct" id="hr") Sell a Product
+  a(href="/postProduct") Sell a Product
   br
-  a(href="http://localhost:5000/products" id="hr") View Products
+  a(href="/payments") Payments
   br
-  a(href="http://localhost:5000/categories" id="hr") View Categories
-  
+a(href="/products" id="hr") View Products
+br
+a(href="/categories" id="hr") View Categories

@@ -1,11 +1,9 @@
 extends index.pug
 
 block content
-  h1 Products!
+  h1 Cart!
   ul
     each product in products
       -let url = `http://localhost:5000/products/` + product.id
       a(href=url) #{product.title} 
       br
-  form(action="/postProduct")
-    button(type="submit") Add product to sell

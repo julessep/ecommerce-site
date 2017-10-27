@@ -1,0 +1,11 @@
+extends index.pug
+
+block content
+  form(action="/postPayment", method="POST")
+    label(for="cardNickname") Card Nickname:
+    input(type="string", name="cardNickname")
+    br
+    label(for="cardNumber") Card Number:
+    input(type="integer", name="cardNumber")   
+    br
+    button(type="submit") Add Card
