@@ -4,7 +4,27 @@ const passport = require('passport');
 // veriable to set the active order
 let activeOrder = null; 
 
-// 
+// gets the active order for user
+module.exports.getActiveOrder = (req, res, next) => {
+  const { Order, Product } = req.app.get('models');
+  let currentUser = req.session.passport.user.id;
+  Order.findAll({
+    include: [{ model: Product }],
+    where: { userId: currentUser, paymentId: null }
+  })
+  .then(cart => {
+    if (cart[0]) {
+      if (cart[0].Products) {
+        let products = cart[0].Products;
+        res.render('cart', { products });
+      }
+    } else res.render('cart');
+  })
+  .catch(err => {
+    next(err);
+  });
+};
+
 module.exports.addProductCart = (req, res, next) => {
   const { Order, Product } = req.app.get('models');
   Order.findAll({
