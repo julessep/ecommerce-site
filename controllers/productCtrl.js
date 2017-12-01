@@ -13,11 +13,13 @@ module.exports.getProducts = (req, res, next) => {
   });
 };
 
+// request handler
 module.exports.getOneProduct = (req, res, next) => {
   // console.log("getOneProduct ");
   // console.log(req.session.passport.user.id);
   const { Product, Category } = req.app.get('models'); 
   // console.log(Category);
+  // where I get data from then feeds to template
   Product.findOne({where: {id: req.params.id} })
   .then( (data) => {
       const {dataValues:product} = data;

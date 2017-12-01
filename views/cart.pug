@@ -7,4 +7,7 @@ block content
       -let url = `http://localhost:5000/products/` + product.id
       a(href=url) #{product.title}
       p $#{product.price}.00
-      br
+      ul
+        //- each payment in payments
+        //- button(type="submit") Edit
+
