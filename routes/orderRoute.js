@@ -8,7 +8,7 @@ const {
   getActiveOrder
 } = require('../controllers/orderCtrl.js');
 
-router.get('/cart', isLoggedIn, getActiveOrder);
+router.get('/cart', isLoggedIn, getActiveOrder)
 router.post('/cart/:id', isLoggedIn, addProductCart);
 
 module.exports = router;
