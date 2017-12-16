@@ -1,0 +1,12 @@
+extends index.pug
+
+block content
+  h3 Plese select a method of payment:
+  form(action="/complete-order", method="POST")
+    label(for="payment") payment:
+      select(class="selectval", name="selectval")
+        each payment in payments
+          option(value=payment.id) #{payment.cardNickname}
+      br    
+    br
+    button(type="submit") Complete Order

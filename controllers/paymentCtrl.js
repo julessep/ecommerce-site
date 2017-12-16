@@ -19,7 +19,6 @@ module.exports.addPaymentForm = (req, res, next) => {
 
 module.exports.postPayment = (req, res, next) => {
   console.log(req.session.passport.user.id);
-
   const { Payment } = req.app.get('models');
   Payment.create({
     userId: req.session.passport.user.id,

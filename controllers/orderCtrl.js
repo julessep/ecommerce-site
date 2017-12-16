@@ -66,3 +66,32 @@ let createOrder = (req, res, next) => {
     module.exports.addProductCart(req, res, next);
   });
 };
+
+module.exports.paymentOptions = (req, res, next) => {
+  const { Payment } = req.app.get('models');
+  Payment.findAll()
+  .then( (payments) => {
+    res.render('complete-order', {
+      payments
+    });
+  })
+  .catch( (err) => {
+    next(err);
+  }); 
+};
+// adds new order to Orders 
+let completeOrder = (req, res, next) => {
+  let currentUser = req.session.passport.user.id; 
+  const { Order, Payment } = req.app.get('models');
+  Order.update(
+    { paymentId: req.body.selectval },
+    {
+      where: { id: activeOrder[0].id }
+    }
+  )
+  .then( () => {
+    console.log(activeOrder[0].id)
+
+    // module.exports.addProductCart(req, res, next);
+  });
+};

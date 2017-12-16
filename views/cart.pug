@@ -8,6 +8,8 @@ block content
       a(href=url) #{product.title}
       p $#{product.price}.00
       ul
-        //- each payment in payments
-        //- button(type="submit") Edit
+  a(class="btn btn-success" href="/complete-order") Complete Order
+
+  //- form(action="/completeOrder")
+  //-   button(type="submit") Complete Order
 
