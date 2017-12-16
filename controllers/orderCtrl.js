@@ -75,23 +75,22 @@ module.exports.paymentOptions = (req, res, next) => {
       payments
     });
   })
-  .catch( (err) => {
+  .catch(err => {
     next(err);
-  }); 
+  });
 };
-// adds new order to Orders 
-let completeOrder = (req, res, next) => {
+
+module.exports.completeOrder = (req, res, next) => {
   let currentUser = req.session.passport.user.id; 
   const { Order, Payment } = req.app.get('models');
   Order.update(
     { paymentId: req.body.selectval },
-    {
-      where: { id: activeOrder[0].id }
-    }
-  )
+    { where: { userId: currentUser , paymentId: null}
+  })
   .then( () => {
-    console.log(activeOrder[0].id)
-
-    // module.exports.addProductCart(req, res, next);
+    res.render('payment-confirmation')
+  })
+  .catch(err => {
+    next(err);
   });
 };

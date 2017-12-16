@@ -13,8 +13,7 @@ const {
 router.get('/cart', isLoggedIn, getActiveOrder)
 router.post('/cart/:id', isLoggedIn, addProductCart);
 router.get('/complete-order', isLoggedIn, paymentOptions);
-
-// router.post('/complete-order', isLoggedIn, completeOrder);
+router.post('/complete-order', isLoggedIn, completeOrder);
 
 
 module.exports = router;
