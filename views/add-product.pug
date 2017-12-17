@@ -1,20 +1,20 @@
 extends index.pug
 
 block content
+  h3 Add Product to Sell
   form(action="/postProduct", method="POST")
-    label(for="title") Title:
-    input(type="string", name="title")
-    br
-    label(for="quantity") Quantity:
-    input(type="string", name="quantity")
-    br
-    label(for="price") Price:
-    input(type="string", name="price") 
-    br
-    label(for="category") Category:
-      select(class="selectval", name="selectval")
-        each category in categories
-          option(value=category.id) #{category.name}
-      br    
-    br
-    button(type="submit") Sell
+    .form-group 
+      label(for="title") Title:
+      input(class="form-control" type="string", name="title")
+    .form-group 
+      label(for="quantity") Quantity:
+      input(class="form-control" type="string", name="quantity")
+    .form-group 
+      label(for="price") Price:
+      input(class="form-control" type="string", name="price") 
+    .form-group 
+      label(for="category") Category:
+        select(class="selectval btn btn-secondary dropdown-toggle", name="selectval")
+          each category in categories
+            option(value=category.id) #{category.name}
+    button(class="btn btn-outline-success" type="submit") Sell
