@@ -1,13 +1,40 @@
-if session.passport
-  span #{session.passport.user.username}
-  form(method="POST")
-    button(class="btn btn-outline-warning btn-sm" type="submit" formaction="/logout") logout
-  a(href="/postProduct") Sell a Product
-  br
-  a(href="/payments") Payments
-  br
-a(href="/products" id="hr") View Products
-br
-a(href="/categories" id="hr") View Categories
-br
-a(href="/cart" id="hr") View Cart
+//- if session.passport
+//-   span #{session.passport.user.username}
+//-   form(method="POST")
+//-     button(class="btn btn-outline-warning btn-sm" type="submit" formaction="/logout") logout
+//-   a(href="/postProduct") Sell a Product
+//-   br
+//-   a(href="/payments") Payments
+//-   br
+//- a(href="/products" id="hr") View Products
+//- br
+//- a(href="/categories" id="hr") View Categories
+//- br
+//- a(href="/cart" id="hr") View Cart
+
+nav(class="navbar navbar-expand-lg navbar-light bg-light")
+	a(class="navbar-brand nav-item" href="/") Bangazon
+	button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation")
+		span(class="navbar-toggler-icon")
+	div(class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup")
+		a(href="/products" id="hr" class="btn btn-light nav-link") Products
+		a(href="/products" id="hr" class="btn btn-light nav-link") Categories
+		//- user info shown only when logged in
+		if session.passport
+			//- sell link
+			a(class="btn btn-light nav-item nav-link" href="/postProduct") Sell Product
+			//- cart link
+			a(class="btn btn-light nav-item nav-link" href="/cart") Cart
+			//- account link
+			a(class="btn btn-light nav-item nav-link" href="/payments") Your Payments
+			//- welcome message
+			span(class="navbar-text") Welcome, #{session.passport.user.first_name}!
+			//- logout button
+			form(method="POST" class="form-inline nav-item")
+				button(class="btn btn-outline-primary" type="submit" formaction="/logout") Logout
+		else
+			div(class="nav-item row")
+				//- login button
+				a(class="btn btn-primary nav-link col-sm" href="/login") Login
+				//- register button
+				a(class="btn btn-info nav-link col-sm" href="/register") Register
