@@ -1,11 +1,13 @@
 extends index.pug
 
 block content
+  h3 Add New Payment Option 
   form(action="/postPayment", method="POST")
-    label(for="cardNickname") Card Nickname:
-    input(type="string", name="cardNickname")
-    br
-    label(for="cardNumber") Card Number:
-    input(type="integer", name="cardNumber")   
-    br
-    button(type="submit") Submit
+    .form-group
+      label(for="cardNickname") Card Nickname:
+      input(type="string", class="form-control",  name="cardNickname", placeholder="ex. Bangazon Credit Card")
+    .form-group    
+      label(for="cardNumber") Card Number:
+      input(type="integer", placeholder="5555 1234 5678", class="form-control", name="cardNumber")   
+      br
+      button(class="btn btn-outline-secondary" type="submit") Submit

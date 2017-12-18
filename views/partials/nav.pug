@@ -1,7 +1,7 @@
 if session.passport
   span #{session.passport.user.username}
   form(method="POST")
-    button(type="submit" formaction="/logout") logout
+    button(class="btn btn-outline-warning btn-sm" type="submit" formaction="/logout") logout
   a(href="/postProduct") Sell a Product
   br
   a(href="/payments") Payments
