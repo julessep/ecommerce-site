@@ -7,5 +7,9 @@ block content
       -let url = `http://localhost:5000/products/` + product.id
       a(href=url) #{product.title} 
       br
-  form(action="/postProduct")
-    button(class="btn btn-outline-secondary" type="submit") Add product to sell
+  if !session.passport
+    a(class="btn btn-warning btn-sm" href="/login") Login to sell Product
+
+  if session.passport
+    form(action="/postProduct")
+      button(class="btn btn-outline-secondary" type="submit") Add product to sell
